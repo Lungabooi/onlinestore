@@ -3,7 +3,7 @@
    <section>
     <p>Welcome to my book store</p>
     
-    <router-link to="/Register"><button class="button-33" role="button">Login</button></router-link>
+    <router-link to="/Login"><button class="button-33" role="button">Login</button></router-link>
     
    </section>
     
