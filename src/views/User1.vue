@@ -1,24 +1,12 @@
 <template >
     <div>
-              <!-- <figure>
-
-  <figcaption v-for="user in user"
-   :key="user.user_id"
-   :user="user" >
-    <div class="fig-author-figure-title">{{user.full_name}} </div>
-    <div class="fig-author-figure-title"> {{user.contact}}</div>
-    <div class="fig-author-figure-title">{{user.user_Id}} &#8212; 5m read</div>
-  </figcaption>
-    <  /figure> -->
-
-    <!-- <div v-for="user of users" :key="user.user_Id" :user="user">
-        <p>{{user.full_name}}</p>
-    </div> -->
-
         <div v-if="user">
     <h2>User Profile</h2>
 
         <p>{{user.full_name}}</p>
+        <p>{{user.email}}</p>
+        <p>{{user.phone_number}}</p>
+        <p>{{user.user_type}}</p>
     </div>
     </div>
 </template>
