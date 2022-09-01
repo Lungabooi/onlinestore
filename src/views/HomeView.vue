@@ -1,10 +1,15 @@
 <template>
   <div>
    <section>
+    <div class="skewed"></div>
+
     <p>Welcome to my book store</p>
+    <img url="https://i.postimg.cc/zvbNWKk0/serge-kutuzov-HCBm-Csa-F0-GY-unsplash.jpg">
+
+    
     
     <router-link to="/Login"><button class="button-33" role="button">Login</button></router-link>
-    
+  
    </section>
     
   </div>
@@ -13,24 +18,13 @@
 
 </script>
 <style scoped>
-section{
-  background-image: url('https://i.postimg.cc/d04ZgBsb/janko-ferlic-sf-L-QOnmy00-unsplash.jpg');
-  background-size: cover;
-  position:relative;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  width: 100vw;
-  height: 100vh;
-  
-}
+
 p{
   position: absolute;
   margin-top: 11rem;
   margin-bottom: 0rem;
   margin-right: 5rem;
-  margin-left: 20rem;
+  margin-left: 4rem;
   color:gold;
   font-size: 50px;
   text-shadow: rgb(255, 255, 255);
@@ -51,12 +45,12 @@ p{
   text-decoration: none;
   transition: all 250ms;
   border: 0;
-  font-size: 16px;
+  font-size: 26px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   position: relative;
-  margin-top: 30rem;
+  margin-top: 45rem;
 }
 
 .button-33:hover {
@@ -69,5 +63,19 @@ p{
    margin: auto;
    padding-top: 50%;
   }
+}
+
+.skewed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2c3e50;
+  z-index: -19;
+  transform: skewY(-18deg);
+  transform-origin: top left;
 }
 </style>

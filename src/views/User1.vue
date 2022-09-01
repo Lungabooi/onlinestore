@@ -1,14 +1,21 @@
 <template >
     <div>
-        <div v-if="user">
-    <h2>User Profile</h2>
+<h2>User Profile</h2>
+<div v-if="user">Welcome {{ user.full_name }}</div>
+    </div>
 
-        <p>{{user.full_name}}</p>
-        <p>{{user.email}}</p>
+    <div v-if="user" class="container">
+			<div class="profile">
+				<div class="pic">
+					<div class="img"><img src="https://i.postimg.cc/VvXfMM9q/Live-1-1.jpg"/> </div>
+					<i class="icon-plus"></i>
+					<i class="icon-ok"></i>
+				</div>
+				<h4>{{user.full_name}}</h4>
+				<p>{{user.email}}</p>
         <p>{{user.phone_number}}</p>
         <p>{{user.user_type}}</p>
-    </div>
-    </div>
+			</div> </div>
 </template>
 
 
@@ -44,45 +51,127 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
-
-.fir-image-figure .fig-author-figure-title {
-  color: var(--fir-color-grey);
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  margin-top: 2px;
-}
-
-.fir-imageover {
-  position: relative;
+.container{
+  width: 25%;
+  margin: 0 37.5%;
+  margin-top: 50px;
+  height: 235px;
   display: flex;
+  justify-content: center;
 }
-/* 
-.fir-imageover-color {
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  background: var(--fir-blue-twitter-alpha);
-  background-image: none;
-  border-radius: 100px;
+
+.profile[data-v-651c00fc] {
+ 
+  margin: auto;
+    display: block;
+    width: 490px;
+    height: 358px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+}
+
+.pic{
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 60px;
+  background: rgba(101,132,124,.5);
+  border: 6px solid #66847C;
+  margin: auto;
+  z-index: 10;
+  overflow: hidden;
+  text-align: right;
   cursor: pointer;
-  transition: background .3s ease-in-out;
-  animation: fadeInFadeOut 2s infinite;
-  top: 0;
-  left: 0;
-} */
-
-/* .fir-imageover-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: fadeInFadeOut 2s infinite;
+  -webkit-transition: all .35s ease-out;
+  -moz-transition: all .25s;
 }
 
-@keyframes fadeInFadeOut {
-  0%   { opacity:1; }
-  50%  { opacity:0; }
-  100% { opacity:1; }
-} */
+.img{
+  background: #FDF6E3;
+  width: 100px;
+  height: 100px;
+  border-radius: 60px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,.6);
+  z-index: 10;
+}
+
+img{
+  width: 100%;	
+  height: 100%;
+}
+
+h4{
+  margin: 30px 0 0 0;
+  font-size: 18px;
+  color: #66847C;
+  text-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+
+p{
+  margin-top: 5px;
+  font-size: 14px;
+  color: rgba(101,132,124,.7);
+}
+
+.icon-plus{
+  float: right;
+  font-size: 25px;
+  text-shadow: 0 2px 5px rgba(0,0,0,.5);
+  position: relative;
+  top: -60px;
+  right: -25px;
+  color: #fff;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+}
+
+.profile:hover > .pic{
+  width: 150px;
+}
+
+.pic:hover{
+  background: rgba(101,132,124,.65);
+}
+
+.pic:hover > .icon-ok{
+   right: -5px 
+}
+
+.pic.active > .icon-ok{
+  opacity: 1;
+  color: #66847C;
+}
+
+.profile:hover > .pic .icon-plus{
+  opacity: 1;
+  right: 15px;
+}
+
+.pic.active > .icon-plus{
+  left: 1000px;
+}
+
+.icon-ok{
+  float: right;
+  font-size: 25px;
+  text-shadow: 0 -1px 1px rgba(0,0,0,.6), 0 1px 1px rgba(255,255,255,.15);
+  position: relative;
+  top: -60px;
+  right: -50px;
+  color: #66847C;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: all .2s;
+  -moz-transition: all .25s;
+}
     
 </style>
