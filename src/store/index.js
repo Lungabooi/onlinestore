@@ -27,6 +27,10 @@ export default createStore({
     setBook:(state, book) =>{
       state.book = book;
     },
+    logOut(state){
+      state.user = null,
+      state.token = null
+    }
 
   },
   actions: { 
@@ -41,7 +45,7 @@ export default createStore({
       .then((res) => res.json())
       .then((userdata) => {
         console.log(userdata);
-        context.commit('setUser', userdata.user)
+        context.commit('setUser', userdata)
       })
     },
     login: async (context, payload) => {
@@ -72,19 +76,18 @@ export default createStore({
         .then((res) => res.json())
         .then((userdata) => {
           console.log(userdata);
-          context.commit('setUser', userdata.user.user_type)
+          context.commit('setUser', userdata)
         })
-      })
-      let data = await res.json()
-      console.log(data.token)
-      if(data.token){
-        context.commit('setToken', data.token),
-         getUser(data.token)
         router.push('/books')
-      }
-      else {
-        alert(data)
-      }
+      })
+      // let data = await res.json()
+      // console.log(data.token)
+ 
+
+      // }
+      // else {
+      //   alert(data)
+      // }
       
    
     }, 

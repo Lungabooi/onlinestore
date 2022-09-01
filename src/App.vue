@@ -2,10 +2,23 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/Login">Login</router-link> |
-    <router-link to="/Register">Register</router-link>
+    <router-link to="/Register">Register</router-link> |
+    <router-link to="/User">User</router-link> |
+    <button @click="Logout">LogOut</button>
   </nav>
   <router-view/>
 </template>
+
+<script>
+
+  export default{
+    methods:{
+      Logout(){
+        this.$store.commit("logOut")
+      }
+    }
+  }
+</script>
 
 <style>
 #app {

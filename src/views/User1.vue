@@ -17,8 +17,8 @@
 
         <div v-if="user">
     <h2>User Profile</h2>
-    {{user}}
-        <p>{{user.user_type}}</p>
+
+        <p>{{user.full_name}}</p>
     </div>
     </div>
 </template>
