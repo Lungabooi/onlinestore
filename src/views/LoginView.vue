@@ -11,7 +11,7 @@
         <router-link to="/reset"><p>Reset-Psw</p></router-link>
       </div> -->
     </form>
-    <div v-if="user">Welcome {{ user.full_name }}</div>
+    <div v-if="user">Welcome {{ user.user_type }}</div>
   </div>
 </template>
 <script>
@@ -66,6 +66,7 @@ form{
   border: none;
   border-radius: 5px;
   height: 30px;
+  cursor: pointer;
 }
 .form-extra{
   display: flex;
@@ -93,4 +94,10 @@ h3{
 hr{
   width: 90%;
 }
+h3[data-v-5c6101e4] {
+    color: #100d0d;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
 </style>

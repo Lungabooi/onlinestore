@@ -112,4 +112,10 @@ h3{
 hr{
   width: 90%;
 }
+h3[data-v-03589122] {
+    margin-top:20px;
+    color: #050505;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
 </style>

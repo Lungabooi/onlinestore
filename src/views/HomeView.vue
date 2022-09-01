@@ -1,4 +1,4 @@
-@<template >
+<template>
   <div>
    <section>
     <p>Welcome to my book store</p>

@@ -1,9 +1,10 @@
 import { createStore } from 'vuex'
+ import createPersistedState from "vuex-persistedstate";
 import router from '@/router';
 export default createStore({
   state: {
-    users: null,
     user: null,
+    users: null,
     token: null,
     books: null,
     book: null
@@ -29,7 +30,23 @@ export default createStore({
 
   },
   actions: { 
+     getUser :async (context,token) => {
+      fetch('https://my-book-ap.herokuapp.com/users/verify',{
+        method:"GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": `${token}`
+        }
+      })
+      .then((res) => res.json())
+      .then((userdata) => {
+        console.log(userdata);
+        context.commit('setUser', userdata.user)
+      })
+    },
     login: async (context, payload) => {
+
+
       let res = await fetch("https://my-book-ap.herokuapp.com/users/login", {
         method: 'POST',
         headers: {
@@ -40,27 +57,38 @@ export default createStore({
           email: payload.email,
           password: payload.password,
         }),
-      });
-      let data = await res.json()
-      console.log(data)
-      if(data.token){
-        context.commit('setToken', data.token)
-        // Verify token
-        //
-        fetch('https://my-book-ap.herokuapp.com/users/verify', {
+      })
+      .then(res => res.json())
+      .then(tokendata=>{
+        console.log(tokendata.token);
+        context.commit('setToken', tokendata.token),
+        fetch('https://my-book-ap.herokuapp.com/users/users/verify',{
+          method:"GET",
           headers: {
             "Content-Type": "application/json",
-            "x-auth-token": data.token
+            "x-auth-token": `${tokendata.token}`
           }
-        }).then((res) => res.json()).then((data) => {
-          context.commit('setUser', data.user)
-          router.push('/books')
         })
+        .then((res) => res.json())
+        .then((userdata) => {
+          console.log(userdata);
+          context.commit('setUser', userdata.user.user_type)
+        })
+      })
+      let data = await res.json()
+      console.log(data.token)
+      if(data.token){
+        context.commit('setToken', data.token),
+         getUser(data.token)
+        router.push('/books')
       }
       else {
         alert(data)
       }
-    },
+      
+   
+    }, 
+
     register: async (context, data) => {
       console.log("working");
       const {
@@ -99,7 +127,7 @@ export default createStore({
         .then((users) => context.commit("setUsers", users));
     },
     getUser: async (context, id) => {
-      fetch("https://my-book-ap.herokuapp.com/users/" +id)
+      fetch("https://my-book-ap.herokuapp.com/users/" + id)
         .then((response) => response.json())
         .then((user) => context.commit("setUser", user[0]));
     },
@@ -111,5 +139,6 @@ export default createStore({
     
   },
   modules: {
-  }
+  },
+  plugins: [createPersistedState()]
 })
