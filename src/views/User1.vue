@@ -7,7 +7,7 @@
     <div v-if="user" class="container">
 			<div class="profile">
 				<div class="pic">
-					<div class="img"><img src="https://i.postimg.cc/VvXfMM9q/Live-1-1.jpg"/> </div>
+					<div class="img"><img src="https://i.postimg.cc/mD2M5vfP/user-2935527-1280.png"/> </div>
 					<i class="icon-plus"></i>
 					<i class="icon-ok"></i>
 				</div>

@@ -3,8 +3,9 @@
    <section>
     <div class="skewed"></div>
 
-    <p>Welcome to my book store</p>
-    <img url="https://i.postimg.cc/zvbNWKk0/serge-kutuzov-HCBm-Csa-F0-GY-unsplash.jpg">
+    <p> <strong>Welcome to my book store</strong></p>
+    <p class="qoute"> ''A book is a gift <br> that you can open again and again.''</p>
+    <img src="https://i.postimg.cc/zvbNWKk0/serge-kutuzov-HCBm-Csa-F0-GY-unsplash.jpg">
 
     
     
@@ -18,6 +19,20 @@
 
 </script>
 <style scoped>
+  
+  img[data-v-9ea40744] {
+    height: 509px;
+    width: 500px;
+    position: absolute;
+    margin-bottom: 12rem;
+    margin-top: 4rem;
+    margin-left: 14rem;
+    box-shadow: 10px 10px 5px 12px rgb(95, 116, 123);
+}
+img:hover[data-v-9ea40744]{
+  opacity: 0.5;
+
+}
 
 p{
   position: absolute;
@@ -31,12 +46,26 @@ p{
   font-family: 'Times New Roman';
   
 }
+.qoute{
+  position: absolute;
+  margin-top: 17rem;
+  margin-bottom: 0rem;
+  margin-right: 5rem;
+  margin-left: 4rem;
+  /* color:rgb(160, 144, 57); */
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 50px;
+  text-shadow: rgb(255, 255, 255);
+  font-family: 'Times New Roman';
+
+}
 
 .button-33 {
   background-color: #c2fbd7;
-  border-radius: 100px;
+  border-radius: 50px;
   box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-  color: green;
+  color: rgb(160, 171, 63);
   cursor: pointer;
   display: inline-block;
   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
@@ -50,7 +79,7 @@ p{
   -webkit-user-select: none;
   touch-action: manipulation;
   position: relative;
-  margin-top: 45rem;
+  margin-top: 35rem;
 }
 
 .button-33:hover {
@@ -77,5 +106,18 @@ p{
   z-index: -19;
   transform: skewY(-18deg);
   transform-origin: top left;
+}
+
+@media only screen and (max-width: 667px) {
+  section{
+    display: flex;
+    flex-direction: column;
+  }
+  img[data-v-9ea40744]{
+    display: none;
+  }
+  .qoute{
+    display: none;
+  }
 }
 </style>

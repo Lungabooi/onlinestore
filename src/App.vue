@@ -31,6 +31,7 @@
 
 nav {
   padding: 20px;
+  background-color: transparent;
   
 }
 

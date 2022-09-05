@@ -1,4 +1,7 @@
 <template>
+ 
+  
+
   <div class="container">
     <form @submit.prevent="Register">
       <h3>Register:</h3>
@@ -19,6 +22,7 @@
     </form>
     <!-- <div v-if="user">Welcome {{ user.full_name }}</div> -->
   </div>
+  
 </template>
 <script>
 export default {

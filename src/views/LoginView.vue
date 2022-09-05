@@ -1,4 +1,6 @@
 <template>
+
+
   <div class="container">
     <form @submit.prevent="login">
       <h3>Log in:</h3>
@@ -38,11 +40,13 @@ export default {
 };
 </script>
 <style scoped>
+
 .container{
   height: 86vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-image: url("https://i.postimg.cc/XJKWNxq6/reading-3606441-1920.jpg"); */
 }
 form{
   box-shadow: 5px 5px 5px 5px lightgray;
@@ -98,6 +102,13 @@ h3[data-v-5c6101e4] {
     color: #100d0d;
     font-weight: bold;
     font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 667px) {
+  section{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 </style>
