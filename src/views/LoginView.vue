@@ -46,11 +46,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: url("https://i.postimg.cc/XJKWNxq6/reading-3606441-1920.jpg"); */
 }
 form{
   box-shadow: 5px 5px 5px 5px lightgray;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,7 +77,6 @@ form{
 .form-extra p {
   width: 100px;
   border: none;
-  border-radius: 5px;
   height: 30px;
   background: white;
   display: flex;
@@ -102,6 +99,7 @@ h3[data-v-5c6101e4] {
     color: #100d0d;
     font-weight: bold;
     font-size: 1.4rem;
+    font-family: lucida;
 }
 
 @media only screen and (max-width: 667px) {

@@ -1,17 +1,43 @@
 <template>
+  
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/Login">Login</router-link> |
     <router-link to="/Register">Register</router-link> |
     <router-link to="/User">User</router-link> |
+    <router-link to="/Contact">Contact</router-link> |
     <button @click="Logout">LogOut</button>
+    
+    
+  
   </nav>
   <router-view/>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+  import TheLoader from './components/TheLoader.vue';
+  import Footer from './components/Footer.vue';
+
+ 
 
   export default{
+    components:{
+      TheLoader,
+      Footer,
+    },
+    data() {
+      return {
+        loading: true,
+      }
+    },
+    computed:{
+      ...mapState({
+        showLoading: state => state.showLoading
+      })
+
+      
+    },
     methods:{
       Logout(){
         this.$store.commit("logOut")
@@ -31,8 +57,11 @@
 
 nav {
   padding: 20px;
-  background-color: transparent;
-  
+  background-color: rgb(214, 149, 149);
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: italic;
+  border-radius: 30px;
 }
 
 nav a {

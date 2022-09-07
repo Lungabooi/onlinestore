@@ -1,13 +1,21 @@
 import { createStore } from 'vuex'
  import createPersistedState from "vuex-persistedstate";
 import router from '@/router';
+import { nextTick } from 'vue';
+
+const api = "https://my-book-ap.herokuapp.com";
+console.log(api);
+
 export default createStore({
   state: {
     user: null,
     users: null,
     token: null,
     books: null,
-    book: null
+    book: null,
+    return :{
+      showLoading: null,
+    }
   },
   getters: {
   },
@@ -30,7 +38,41 @@ export default createStore({
     logOut(state){
       state.user = null,
       state.token = null
-    }
+    },
+    setShowLoading(state){
+      state.showLoading =showLoading;
+
+    },
+    sortBooksbyPrice: (state) => {
+      state.books = state.programs.sort((a, b) => {
+        if (a.price < b.price) {
+          return -1;
+        }
+        if (a.price > b.price) {
+          return 1;
+        }
+        return 0;
+      });
+      if (!state.asc) {
+        state.books.reverse();
+      }
+      state.asc = !state.asc;
+    },
+    sortBooksbyTitle: (state) => {
+      state.books = state.programs.sort((a, b) => {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      });
+      if (!state.asc) {
+        state.books.reverse();
+      }
+      state.asc = !state.asc;
+    },
 
   },
   actions: { 
@@ -77,17 +119,10 @@ export default createStore({
         .then((userdata) => {
           console.log(userdata);
           context.commit('setUser', userdata)
-        })
+        });
+        window.alert("Logged in")
         router.push('/books')
-      })
-      // let data = await res.json()
-      // console.log(data.token)
- 
-
-      // }
-      // else {
-      //   alert(data)
-      // }
+      });
       
    
     }, 
@@ -138,6 +173,57 @@ export default createStore({
       fetch("https://my-book-ap.herokuapp.com/books/")
         .then((response) => response.json())
         .then((books) => context.commit("setBooks", books));
+    },
+    addBook: async (context, book) => {
+      console.log(book);
+      fetch("https://my-book-ap.herokuapp.com/books", {
+        method: "POST",
+        body: JSON.stringify(book),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((bookdata) => {
+         console.log(bookdata);
+          context.commit("setBooks")
+        });
+    },
+    deleteBook: async (context, id) => {
+      fetch(`${api}/books/${id}`, {
+        method: "DELETE",
+      })
+      .then((response) => response.json())
+      .then(() => context.dispatch("getBooks"));
+    },
+    updateBook: async (context, id) => {
+      fetch(`${api}/books/${id}`, {
+        method: "UPDATE",
+      })
+      .then((response) => response.json())
+      .then(() => context.dispatch("getBooks"));
+    },
+    addUser: async (context, user) => {
+      console.log(user);
+      fetch("https://my-book-ap.herokuapp.com/users", {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((Userdata) => {
+         console.log(Userdata);
+          context.commit("setUsers")
+        });
+    },
+    deleteUser: async (context, Id) => {
+      fetch(`${api}/users/${Id}`, {
+        method: "DELETE",
+      })
+      .then((response) => response.json())
+      .then(() => context.dispatch("getUsers"));
     },
     
   },

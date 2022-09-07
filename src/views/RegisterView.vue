@@ -10,9 +10,8 @@
        <input class="form-input" type="text" name="password" required v-model="password" placeholder="Password" />
        <input class="form-input" type="text" name="phone_number" required v-model="phone_number" placeholder="Phone number" />
           <input class="form-input" type="text" name="email" required v-model="email" placeholder="Email" />
-      <input class="form-input" type="date" name="join_date" required v-model="join_date" placeholder="Join Date" />
+      <!-- <input class="form-input" type="date" name="join_date" required v-model="join_date" placeholder="Join Date" /> -->
        <input class="form-input" type="text" name="user_type" required v-model="user_type" placeholder="User type" />
-         <input class="form-input" type="number" name="cart" required v-model="cart" placeholder="cart" />
       <button @click="Register" class="form-btn" type="submit" value="Register">Submit</button> 
       <hr>
       <!-- <div class="form-extra">

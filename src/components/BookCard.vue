@@ -1,13 +1,19 @@
 <template>
+  
+
+    
       <div class="card">
       <div class="card-item"><img :src="book.imgURL"/></div>
       <div class="card-item">{{ book.title }}</div>
+      
        <div class="card-item">R{{ book.price }}</div>
     </div>
 </template>
 <script>
 export default {
   props: ["book"],
+  
+  
 };
 </script>
 <style scoped>

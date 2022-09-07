@@ -1,19 +1,55 @@
 <template>
+  
+    <div><input type="text" id="" v-model="search" placeholder="Search" class="w-100 my-5 justify-content-center"></div>
+    <div class="filter">
+      <button @click="sortByPrice">
+      Sort by Price</button>
 
-  <div> <i class="bi bi-search"></i> <input
-    class="search"  type="search" v-model="search" placeholder="Search  books"
-  /></div>
-    <div v-if="books" class="container">
-  <BookCard class="card"
-   v-for="book in books"
-   :key="book.book_id"
-   :book="book"/>
-  </div>
+
+
+    </div>
+    <div v-if="books">
+      <BookCard class="card"
+      v-for="book in books"
+      :key="book.book_id"
+      :book="book"/>
+      
+    </div>
+   <div v-else class="spinner-border" role="status">
+  <TheLoader />
+</div>
+
+  
+
+
 
 </template>
 <script>
+
 import BookCard from "../components/BookCard.vue";
+import TheLoader from "../components/TheLoader.vue";
 export default {
+  data() {
+    return {
+      search:'',
+      content: false,
+    }
+  },
+    computed: {
+       books() {
+      return this.$store.state.books;
+    },
+      sortByPrice() {
+        return this.$store.state.books?.filter((books) => {
+          let isMatch = true;
+          if (!books.title?.toLowerCase().includes(this.search.toLowerCase())) 
+              isMatch = false;
+              if (this.category !== "all" && book.category !== this.category) isMatch = false;
+              return isMatch;
+          });
+        },
+      },
+
   mounted() {
     this.$store.dispatch("getBooks");
   },
@@ -21,8 +57,15 @@ export default {
     books() {
       return this.$store.state.books
     },
+    computed: {
+      filterdBooks: function(){
+        return this.books.filter((book) =>{
+          return book.title.match(this.search)
+        })
+      }
+    }
   },
-  components: { BookCard },
+  components: { BookCard, TheLoader },
   mounted() {
     this.$store.dispatch("getBooks");
   },

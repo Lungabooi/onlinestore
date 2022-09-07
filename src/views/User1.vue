@@ -15,23 +15,27 @@
 				<p>{{user.email}}</p>
         <p>{{user.phone_number}}</p>
         <p>{{user.user_type}}</p>
-			</div> </div>
+			</div> <button type="button" class="btn btn-danger" @click="deleteUser(user.user_Id)">delete profile</button>
+      <button type="button" class="btn btn-secondary">update profile</button></div>
 </template>
 
 
 
 <script>
 export default {
-    // props: ["user.user_Id"],
-    //   mounted() {
-    //     // this.$store.dispatch("getUser");
-    //     console.log(this.User);
-    //   },
+  methods: {
+    deleteUser(Id) {
+      return this.$store.dispatch("deleteUser", Id);
+    }},
+    mounted() {
+    this.$store.dispatch("getUsers");
+  },
   computed: {
  user(){
     return this.$store.state.user
- }
+ },
   },
+  
 };
 </script>
 

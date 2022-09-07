@@ -37,20 +37,25 @@ const routes = [
     component: () => import( '../views/Admin.vue')
   },
   {
-    path: '/AdminBooks',
-    name: 'AdminBooks',
-    component: () => import( '../views/AdminBooks.vue')
+    path: '/Adminbooks',
+    name: 'Adminbooks',
+    component: () => import( '../views/Adminbooks.vue')
   },
   {
     path: '/AdminUsers',
     name: 'AdminUsers',
     component: () => import( '../views/AdminUsers.vue')
   },
-  ,
+
   {
-    path: '/AdminUsers',
-    name: 'AdminUsers',
-    component: () => import( '../views/AdminUsers.vue')
+    path: '/Contact',
+    name: 'Contact',
+    component: () => import( '../views/Contact.vue')
+  },
+  {
+    path: '/About',
+    name: 'About',
+    component: () => import( '../views/AboutPage.vue')
   }
 ]
 
