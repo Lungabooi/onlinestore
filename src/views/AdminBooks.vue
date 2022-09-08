@@ -1,18 +1,18 @@
 <template >
     
         <h5>Books</h5>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
 Add Book</button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Check Spelling</h5>
+        <h5 class="modal-title" id="addModalLabel">Check Spelling</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form @submit.prevent="addbook(user.user_Id)">
+      <form @submit.prevent="addbook()">
       <div class="modal-body">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Title </label>
@@ -91,19 +91,25 @@ Add Book</button>
       <td>R{{book.price}}</td> 
       <td><img :src="book.imgURL" /></td>
       <td><button type="button" class="btn btn-danger" @click="deleteBook(book.book_id)">delete</button></td> 
-      <td> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <td> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
 Update</button>
 
 <!-- Modal -->
-<div class="modal fade" id="update" tabindex="-1" aria-labelledby="update" aria-hidden="true">
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="update">Check Spelling</h5>
+        <h5 class="modal-title" id="updateModalLabel">Check Spelling</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form @submit.prevent="updatebook(user.user_Id)">
+      <form @submit.prevent="updateBook(book.book_id)">
       <div class="modal-body">
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">id </label>
+            <input type="text" class="title" id="book_id" v-model="book_id">
+             
+          </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Title </label>
             <input type="text" class="title" id="title" v-model="title">
@@ -163,6 +169,7 @@ Update</button>
 </template>
 <script>
 export default {
+  props: ["book_id"],
   data(){
   return{
    title:"",
@@ -203,13 +210,22 @@ export default {
       return this.$store.dispatch("deleteBook", id);
     },
     
-    updateBook(id) {
-      return this.$store.dispatch("updateBook", id);
-    },
+    updateBook(book_id) {
+      this.$store.dispatch("updateBook",{
+        id:book_id,
+        title: this.title,
+        author: this.author,
+        publisher: this.publisher,
+        category: this.category,
+        price: this.price,
+        quantity:this.quantity,
+        imgURL:this.imgURL
+     
+      });
   },
  
     
-}
+}}
 </script>
 <style scoped >
   btn-primary {

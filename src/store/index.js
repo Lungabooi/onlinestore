@@ -196,12 +196,38 @@ export default createStore({
       .then((response) => response.json())
       .then(() => context.dispatch("getBooks"));
     },
-    updateBook: async (context, id) => {
-      fetch(`${api}/books/${id}`, {
-        method: "UPDATE",
+    updateBook: async (context, payload) => {
+      console.log("updating");
+      const {
+        title,
+        author,
+        publisher,
+        category,
+        price,  
+        quantity,     
+        imgURL,
+      } = payload;
+      fetch("https://my-book-ap.herokuapp.com/books/" + payload.id, {
+        method: "PUT",
+        body: JSON.stringify({
+          title: title,
+          author: author,
+          publisher: publisher,
+          category: category,
+          price: price,
+          quantity:quantity,
+          imgURL: imgURL,
+          // cart: cart,          
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
       })
-      .then((response) => response.json())
-      .then(() => context.dispatch("getBooks"));
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          context.commit("setBook", data)
+        });
     },
     addUser: async (context, user) => {
       console.log(user);
