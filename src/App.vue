@@ -6,6 +6,7 @@
     <router-link to="/Register">Register</router-link> |
     <router-link to="/User">User</router-link> |
     <router-link to="/Contact">Contact</router-link> |
+    <router-link to="/About">About</router-link> |
     <button @click="Logout">LogOut</button>
     
     
@@ -46,7 +47,7 @@ import { mapState } from 'vuex';
   }
 </script>
 
-<style>
+<style >
 #app {
   font-family:'Times New Roman', Times, serif;
   -webkit-font-smoothing: antialiased;

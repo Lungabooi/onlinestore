@@ -89,7 +89,7 @@ footer{
 img, svg {
     vertical-align: middle;
     width: 764px;
-    height: 597px;
+    min-height: 597px;
     background:linear-gradient(rgba(116, 79, 79, 0.8), rgba(111, 40, 40, 0.2)), 
 }
 

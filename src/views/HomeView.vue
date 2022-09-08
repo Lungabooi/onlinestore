@@ -5,7 +5,7 @@
 
     <p> <strong>Welcome to my book store</strong></p>
     <p class="qoute"> ''A book is a gift <br> that you can open again and again.''</p>
-    <img src="https://i.postimg.cc/zvbNWKk0/serge-kutuzov-HCBm-Csa-F0-GY-unsplash.jpg">
+    <!-- <img src="https://i.postimg.cc/zvbNWKk0/serge-kutuzov-HCBm-Csa-F0-GY-unsplash.jpg"> -->
 
     
     
@@ -90,12 +90,12 @@ p{
   transform: scale(1.05) rotate(-1deg);
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   p {
    margin: auto;
    padding-top: 50%;
   }
-}
+} */
 
 .skewed {
   position: absolute;
@@ -111,16 +111,5 @@ p{
   transform-origin: top left;
 }
 
-@media only screen and (max-width: 667px) {
-  section{
-    display: flex;
-    flex-direction: column;
-  }
-  img[data-v-9ea40744]{
-    display: none;
-  }
-  .qoute{
-    display: none;
-  }
-}
+
 </style>
