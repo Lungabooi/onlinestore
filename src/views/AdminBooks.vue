@@ -211,6 +211,7 @@ export default {
       });
        
     },
+    
     deleteBook(id) {
       return this.$store.dispatch("deleteBook", id);
     },

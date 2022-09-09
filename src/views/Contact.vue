@@ -83,7 +83,6 @@ footer{
     flex-wrap: nowrap;
     flex-direction: row;
     margin-left:4rem;
-    border-top: 5px solid yellow;
     
 }
 img, svg {

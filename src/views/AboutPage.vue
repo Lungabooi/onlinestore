@@ -33,11 +33,11 @@
 
         </ul>
         <ul class="box">
-          <li class="link_name">Clients</li>
-          <li><a href="https://www.bargainbooks.co.za/">Bargain Books</a></li>
+          <li class="link_name">Categories</li>
+          <li><a href="#"> Fiction</a></li>
           <li><a href="{% url 'category' 5 %">Art and Culture</a></li>
-          <li><a href="{% url 'category' 11 %">People</a></li>
-          <li><a href="{% url 'category' 2 %">Travel</a></li>
+          <li><a href="{% url 'category' 11 %">Novel</a></li>
+          <li><a href="{% url 'category' 2 %">Food</a></li>
 
         </ul>
         <ul class="box">

@@ -7,7 +7,7 @@
     <router-link to="/user">User</router-link> |
     <router-link to="/contact">Contact</router-link> |
     <router-link to="/about">About</router-link> |
-    <button @click="logout">LogOut</button>
+    <button @click="logOut">LogOut</button>
     
     
   
@@ -58,11 +58,10 @@ import { mapState } from 'vuex';
 
 nav {
   padding: 20px;
-  background-color: rgb(214, 149, 149);
   font-size: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-style: italic;
-  border-radius: 30px;
+
+
 }
 
 nav a {

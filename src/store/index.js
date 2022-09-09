@@ -14,7 +14,7 @@ export default createStore({
     books: null,
     book: null,
     return :{
-      showLoading: null,
+      showLoading: !null,
     }
   },
   getters: {
@@ -90,22 +90,21 @@ export default createStore({
         context.commit('setUser', userdata)
       })
     },
+
     login: async (context, payload) => {
-
-
-      let res = await fetch("https://my-book-ap.herokuapp.com/users/login", {
+   let res = await fetch("https://my-book-ap.herokuapp.com/users/login", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
         },
         body:
         JSON.stringify({
-          email: payload.email,
-          password: payload.password,
+          email:payload.email,
+          password:payload.password,
         }),
       })
       .then(res => res.json())
-      .then(tokendata=>{
+      .then(tokendata =>{
         console.log(tokendata.token);
         context.commit('setToken', tokendata.token),
         fetch('https://my-book-ap.herokuapp.com/users/users/verify',{
