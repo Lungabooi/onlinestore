@@ -12,7 +12,7 @@ Add User</button>
         <h5 class="modal-title" id="exampleModalLabel">Check Spelling</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form @submit.prevent="addUser(user.user_Id)">
+      <form @submit.prevent="addUser()">
       <div class="modal-body">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Full name </label>
@@ -194,7 +194,7 @@ export default {
         phone_number: this.phone_number,
         email: this.email,
         join_date: this.join_date,
-        user_type:this.user_type,
+        user_type:this.user_type
      
       })},
     addUser() {

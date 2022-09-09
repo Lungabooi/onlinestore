@@ -206,7 +206,7 @@ export default {
         category: this.category,
         price: this.price,
         quantity:this.quantity,
-        imgURL:this.imgURL
+        imgURL:this.imgURL,
      
       });
        

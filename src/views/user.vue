@@ -28,7 +28,7 @@ export default {
       return this.$store.dispatch("deleteUser", Id);
     }},
     mounted() {
-    this.$store.dispatch("getUsers");
+    this.$store.dispatch("getUser");
   },
   computed: {
  user(){
