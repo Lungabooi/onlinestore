@@ -251,6 +251,39 @@ export default createStore({
       .then((response) => response.json())
       .then(() => context.dispatch("getUsers"));
     },
+    updateUser: async (context, payload) => {
+      console.log("updating");
+      const {
+        full_name,
+        password,
+        phone_number,
+        category,
+        email,  
+        join_date,     
+        user_type,
+      } = payload;
+      fetch("https://my-book-ap.herokuapp.com/books/" + payload.id, {
+        method: "PUT",
+        body: JSON.stringify({
+          full_name: full_name,
+          password: password,
+          phone_number: phone_number,
+          category: category,
+          email: email,
+          join_date:join_date,
+          user_type: user_type,
+          // cart: cart,          
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          context.commit("setUser", data)
+        });}
+    
     
   },
   modules: {

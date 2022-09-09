@@ -1,15 +1,15 @@
 <template >
     <div>
         <h5> Users</h5>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="addModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 Add User</button>
 
 <!-- Modal -->
-<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addModalLabel">Check Spelling</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Check Spelling</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form @submit.prevent="addUser(user.user_Id)">
@@ -69,7 +69,6 @@ Add User</button>
       <th scope="col">email</th>
       <th scope="col">join_date</th>
       <th scope="col">user_type</th>
-      <th scope="col">Add</th>
      <th scope="col">update</th>
      <th scope="col">delete</th>
 
@@ -82,8 +81,7 @@ Add User</button>
       <td>{{user.email}}</td>
       <td>{{user.join_date}}</td>
       <td>{{user.user_type}}</td> 
-      <td><button type="button" class="btn btn-primary">add</button></td>
-      <td><button type="button" class="btn btn-secondary">update</button></td>
+      <td><button type="button" class="btn btn-secondary"  @click="updateUser(user.user_Id)">update</button></td>
       <td><button type="button" class="btn btn-danger" @click="deleteUser(user.user_Id)">delete</button></td> 
     </tr>
    
@@ -119,6 +117,17 @@ export default {
         join_date: this.join_date,
         user_type: this.user_type,
      
+      })},
+      updateUser(user_id) {
+      this.$store.dispatch("updateUser",{
+        id:user_id,
+        full_name: this.full_name,
+        password: this.password,
+        phone_number: this.phone_number,
+        email: this.email,
+        join_date: this.join_date,
+        user_type:this.user_type,
+     
       })}
   
     },
@@ -126,5 +135,9 @@ export default {
 }
 </script>
 <style scoped >
+  tr:hover{
+    color: yellow;
+
+}
     
 </style>

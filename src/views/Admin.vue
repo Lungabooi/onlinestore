@@ -21,10 +21,7 @@ h5{
 
 }
 
-tr:hover{
-    color: yellow;
 
-}
 
     
 </style>

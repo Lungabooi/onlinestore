@@ -95,7 +95,7 @@ h3{
 hr{
   width: 90%;
 }
-h3[data-v-5c6101e4] {
+h3 {
     color: #100d0d;
     font-weight: bold;
     font-size: 1.4rem;

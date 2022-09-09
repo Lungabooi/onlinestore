@@ -23,7 +23,7 @@
 
 <style scoped>
   
-  img[data-v-9ea40744] {
+  img {
     height: 509px;
     width: 500px;
     position: absolute;
@@ -32,7 +32,7 @@
     margin-left: 14rem;
     box-shadow: 10px 10px 5px 12px rgb(95, 116, 123);
 }
-img:hover[data-v-9ea40744]{
+img:hover{
   opacity: 0.5;
 
 }

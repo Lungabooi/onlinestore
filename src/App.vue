@@ -2,12 +2,12 @@
   
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/Login">Login</router-link> |
-    <router-link to="/Register">Register</router-link> |
-    <router-link to="/User">User</router-link> |
-    <router-link to="/Contact">Contact</router-link> |
-    <router-link to="/About">About</router-link> |
-    <button @click="Logout">LogOut</button>
+    <router-link to="/login">Login</router-link> |
+    <router-link to="/register">Register</router-link> |
+    <router-link to="/user">User</router-link> |
+    <router-link to="/contact">Contact</router-link> |
+    <router-link to="/about">About</router-link> |
+    <button @click="logout">LogOut</button>
     
     
   

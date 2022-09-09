@@ -13,49 +13,49 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/login.vue')
   },
 
   {
-    path: '/Register',
-    name: 'Register',
-    component: () => import( '../views/RegisterView.vue')
+    path: '/register',
+    name: 'register',
+    component: () => import( '../views/register.vue')
   },
   {
     path: '/books',
     name: 'books',
-    component: () => import( '../views/Books.vue')
+    component: () => import( '../views/books.vue')
   },
   {
-    path: '/User',
-    name: 'User',
-    component: () => import( '../views/User1.vue')
+    path: '/user',
+    name: 'user',
+    component: () => import( '../views/user.vue')
   },
   {
     path: '/admin',
     name: 'admin',
-    component: () => import( '../views/Admin.vue')
+    component: () => import( '../views/admin.vue')
   },
   {
-    path: '/Adminbooks',
-    name: 'Adminbooks',
-    component: () => import( '../views/Adminbooks.vue')
+    path: '/adminBooks',
+    name: 'adminBooks',
+    component: () => import( '../views/adminBooks.vue')
   },
   {
-    path: '/AdminUsers',
-    name: 'AdminUsers',
-    component: () => import( '../views/AdminUsers.vue')
+    path: '/adminUsers',
+    name: 'adminUsers',
+    component: () => import( '../views/adminUsers.vue')
   },
 
   {
-    path: '/Contact',
-    name: 'Contact',
-    component: () => import( '../views/Contact.vue')
+    path: '/contact',
+    name: 'contact',
+    component: () => import( '../views/contact.vue')
   },
   {
-    path: '/About',
-    name: 'About',
-    component: () => import( '../views/AboutPage.vue')
+    path: '/about',
+    name: 'about',
+    component: () => import( '../views/aboutPage.vue')
   }
 ]
 

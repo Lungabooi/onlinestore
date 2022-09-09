@@ -15,39 +15,39 @@ Add Book</button>
       <form @submit.prevent="addbook()">
       <div class="modal-body">
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Title </label>
-            <input type="text" class="title" id="title" v-model="title">
+            <label for="exampleInputEmail1" class="form-label"> </label>
+            <input type="text" class="title" id="title" v-model="title" placeholder="title">
              
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Author </label>
-            <input type="text" class="author" id="author" v-model="author">
+            <label for="exampleInputEmail1" class="form-label"> </label>
+            <input type="text" class="author" id="author" v-model="author" placeholder="Author">
             
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Publisher </label>
-            <input type="text" class="publisher" id="publisher" v-model="publisher">
+            <label for="exampleInputEmail1" class="form-label"> </label>
+            <input type="text" class="publisher" id="publisher" v-model="publisher" placeholder="Publisher">
             
           </div>
 
 
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Category </label>
-            <input type="text" class="category" id="category" v-model="category" >
+            <label for="exampleInputEmail1" class="form-label"> </label>
+            <input type="text" class="category" id="category" v-model="category" placeholder="Category">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Quantity </label>
-            <input type="text" class="category" id="category" v-model="quantity" >
+            <label for="exampleInputEmail1" class="form-label"> </label>
+            <input type="text" class="category" id="category" v-model="quantity" placeholder="Quantity">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Image </label>
-            <input type="text" class="category" id="category" v-model="imgURL" >
+            <label for="exampleInputEmail1" class="form-label"> </label>
+            <input type="text" class="category" id="category" v-model="imgURL" placeholder="Image">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Price </label>
-            <input type="text" class="price" id="price" v-model="price">
+            <label for="exampleInputEmail1" class="form-label"> </label>
+            <input type="text" class="price" id="price" v-model="price" placeholder="Price">
             
           </div>
           
@@ -77,6 +77,7 @@ Add Book</button>
       <th scope="col">price</th>
       <th scope="col">image</th>
       <th scope="col">Delete</th>
+      <th scope="col">Update</th>
 
       
     </tr>
@@ -107,43 +108,43 @@ Update</button>
 
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">id </label>
-            <input type="text" class="title" id="book_id" v-model="book_id">
+            <input type="text" class="title" id="book_id" v-model="book_id" placeholder="id">
              
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Title </label>
-            <input type="text" class="title" id="title" v-model="title">
+            <input type="text" class="title" id="title" v-model="title" placeholder="title">
              
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Author </label>
-            <input type="text" class="author" id="author" v-model="author">
+            <input type="text" class="author" id="author" v-model="author" placeholder="Author">
             
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Publisher </label>
-            <input type="text" class="publisher" id="publisher" v-model="publisher">
+            <input type="text" class="publisher" id="publisher" v-model="publisher" placeholder="Publisher">
             
           </div>
 
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Category </label>
-            <input type="text" class="category" id="category" v-model="category" >
+            <input type="text" class="category" id="category" v-model="category"  placeholder="Category">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Quantity </label>
-            <input type="text" class="category" id="category" v-model="quantity" >
+            <input type="text" class="category" id="category" v-model="quantity" placeholder="Quantity" >
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Image </label>
-            <input type="text" class="category" id="category" v-model="imgURL" >
+            <input type="text" class="category" id="category" v-model="imgURL"  placeholder="Image url">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Price </label>
-            <input type="text" class="price" id="price" v-model="price">
+            <input type="text" class="price" id="price" v-model="price"  placeholder="Price">
             
           </div>
           
@@ -241,6 +242,20 @@ table{
 img, svg {
     vertical-align: middle;
     height: 70px;
+}
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-end;
+}
+tr:hover{
+    color: yellow;
+
 }
 
 
