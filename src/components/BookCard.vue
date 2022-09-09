@@ -21,13 +21,15 @@ export default {
     width: 300px;
     height: 300px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
     margin: auto;
     padding: 1rem, 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .card-item{
   width: 90%;

@@ -1,5 +1,5 @@
 <template>
-  
+  <div class="content">
     <div><input type="text" id="" v-model="search" placeholder="Search" class="w-100 my-5 justify-content-center"></div>
     <div class="filter">
       <button @click="sortByPrice">
@@ -17,6 +17,7 @@
     </div>
    <div v-else class="spinner-border" role="status">
   <TheLoader />
+</div>
 </div>
 
   
@@ -85,6 +86,16 @@ export default {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 50%;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-content: center;
+    align-items: stretch;
 }
 
 </style>

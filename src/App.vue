@@ -7,7 +7,8 @@
     <router-link to="/user">User</router-link> |
     <router-link to="/contact">Contact</router-link> |
     <router-link to="/about">About</router-link> |
-    <button @click="logOut">LogOut</button>
+     <router-link to="/about">About</router-link>
+    <button @click="logOut">Logout</button>
     
     
   
@@ -40,7 +41,7 @@ import { mapState } from 'vuex';
       
     },
     methods:{
-      Logout(){
+      logOut(){
         this.$store.commit("logOut")
       }
     }

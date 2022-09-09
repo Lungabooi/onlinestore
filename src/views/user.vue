@@ -26,7 +26,11 @@ export default {
   methods: {
     deleteUser(Id) {
       return this.$store.dispatch("deleteUser", Id);
-    }},
+    },
+    logOut(){
+      return this.$store.dispatch("logOut");
+    }
+  },
     mounted() {
     this.$store.dispatch("getUsers");
   },
