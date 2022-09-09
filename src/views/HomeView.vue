@@ -5,11 +5,7 @@
 
     <p> <strong>Welcome to my book store</strong></p>
     <p class="qoute"> ''A book is a gift <br> that you can open again and again.''</p>
-    <!-- <img src="https://i.postimg.cc/zvbNWKk0/serge-kutuzov-HCBm-Csa-F0-GY-unsplash.jpg"> -->
-
-    
-    
-    <router-link to="/Login"><button class="button-33" role="button">Login</button></router-link>
+ <router-link to="/Login"><button class="button-33" role="button">Login</button></router-link>
   
    </section>
     

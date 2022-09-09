@@ -37,9 +37,9 @@ const routes = [
     component: () => import( '../views/admin.vue')
   },
   {
-    path: '/adminBooks',
-    name: 'adminBooks',
-    component: () => import( '../views/adminBooks.vue')
+    path: '/AdminBooks',
+    name: 'AdminBooks',
+    component: () => import( '../views/AdminBooks.vue')
   },
   {
     path: '/adminUsers',
@@ -53,9 +53,9 @@ const routes = [
     component: () => import( '../views/contact.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import( '../views/aboutPage.vue')
+    path: '/About',
+    name: 'About',
+    component: () => import( '../views/AboutPage.vue')
   }
 ]
 
