@@ -3,9 +3,13 @@
    <section>
     <div class="skewed"></div>
 
-    <p> <strong>Welcome to my book store</strong></p>
+    <p> <strong>Leave A Bookmark</strong></p>
     <p class="qoute"> ''A book is a gift <br> that you can open again and again.''</p>
- <router-link to="/Login"><button class="button-33" role="button">Login</button></router-link>
+    <img src="https://i.postimg.cc/zvbNWKk0/serge-kutuzov-HCBm-Csa-F0-GY-unsplash.jpg">
+
+    
+    
+    <router-link to="/Login"><button class="button-33" role="button">Login</button></router-link>
   
    </section>
     
@@ -86,12 +90,16 @@ p{
   transform: scale(1.05) rotate(-1deg);
 }
 
-/* @media only screen and (max-width: 600px) {
-  p {
+@media only screen and (max-width: 600px) {
+  .qoute {
    margin: auto;
    padding-top: 50%;
+   display: none;
   }
-} */
+  img{
+    display: none;
+  }
+}
 
 .skewed {
   position: absolute;

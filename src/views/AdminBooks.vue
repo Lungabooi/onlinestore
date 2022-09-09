@@ -173,6 +173,7 @@ export default {
   props: ["book_id"],
   data(){
   return{
+   book_id:"",
    title:"",
    author:"",
    publisher:"",
@@ -186,6 +187,9 @@ export default {
     computed:{
         books(){
         return this.$store.state.books;
+        },
+        book(){
+        return this.$store.state.book;
         },
        
     },
@@ -213,7 +217,7 @@ export default {
     
     updateBook(book_id) {
       this.$store.dispatch("updateBook",{
-        id:book_id,
+        book_id:book_id,
         title: this.title,
         author: this.author,
         publisher: this.publisher,

@@ -199,6 +199,7 @@ export default createStore({
     updateBook: async (context, payload) => {
       console.log("updating");
       const {
+        book_id,
         title,
         author,
         publisher,
@@ -210,6 +211,7 @@ export default createStore({
       fetch("https://my-book-ap.herokuapp.com/books/" + payload.id, {
         method: "PUT",
         body: JSON.stringify({
+          book_id: book_id,
           title: title,
           author: author,
           publisher: publisher,
@@ -249,11 +251,12 @@ export default createStore({
         method: "DELETE",
       })
       .then((response) => response.json())
-      .then(() => context.dispatch("getUsers"));
+      .then(() => context.dispatch("getUser"));
     },
     updateUser: async (context, payload) => {
       console.log("updating");
       const {
+        user_Id,
         full_name,
         password,
         phone_number,
@@ -262,9 +265,10 @@ export default createStore({
         join_date,     
         user_type,
       } = payload;
-      fetch("https://my-book-ap.herokuapp.com/books/" + payload.id, {
+      fetch("https://my-book-ap.herokuapp.com/books/" + payload.Id, {
         method: "PUT",
         body: JSON.stringify({
+          user_Id: user_Id,
           full_name: full_name,
           password: password,
           phone_number: phone_number,
