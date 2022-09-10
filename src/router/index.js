@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/books',
     name: 'books',
-    component: () => import( '../views/books.vue')
+    component: () => import( '../views/Books.vue')
   },
   {
     path: '/user',
@@ -34,7 +34,7 @@ const routes = [
   {
     path: '/admin',
     name: 'admin',
-    component: () => import( '../views/admin.vue')
+    component: () => import( '../views/Admin.vue')
   },
   {
     path: '/AdminBooks',
@@ -44,13 +44,13 @@ const routes = [
   {
     path: '/adminUsers',
     name: 'adminUsers',
-    component: () => import( '../views/adminUsers.vue')
+    component: () => import( '../views/AdminUsers.vue')
   },
 
   {
     path: '/contact',
     name: 'contact',
-    component: () => import( '../views/contact.vue')
+    component: () => import( '../views/Contact.vue')
   },
   {
     path: '/About',
