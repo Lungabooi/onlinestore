@@ -32,8 +32,7 @@ import TheLoader from "../components/TheLoader.vue";
 export default {
   data() {
     return {
-      search:'',
-      content: false,
+      books:[]
     }
   },
     computed: {
